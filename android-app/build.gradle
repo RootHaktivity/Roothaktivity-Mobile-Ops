@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-modules/projects.
+buildscript {
+    ext.kotlin_version = "1.9.20"
+    ext.compose_version = "1.5.4"
+    ext.compose_compiler_version = "1.5.4"
+    
+    repositories {
+        google()
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'com.google.ar.sceneform:plugin:1.17.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
